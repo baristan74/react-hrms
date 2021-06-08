@@ -1,4 +1,4 @@
-###Human Resources Management System
+# HRMS (Human Resource Management System)
 
 ![first commit](https://user-images.githubusercontent.com/61651202/121256958-cb471080-c8b5-11eb-8ff9-ff904113aeeb.png)
 
