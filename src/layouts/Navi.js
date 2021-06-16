@@ -26,7 +26,7 @@ function handleSignIn() {
           <Menu inverted fixed="top" size="large">
             <Container>
               <Menu.Item>
-                <Image size="tiny" src={"../assets/hrms-logo.png"} />
+                <Image as={NavLink} to="/" size="tiny" src={"../assets/hrms-logo.png"} />
               </Menu.Item>
               <Menu.Menu position="left">
                 <Menu.Item as={NavLink} to="/jobadverts">

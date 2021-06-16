@@ -1,6 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import { Menu, Label, Icon,Divider } from "semantic-ui-react";
+import { Menu, Label, Icon} from "semantic-ui-react";
 
 export default function AdminManagementMenu() {
   const activeItem = ["management"];

@@ -7,14 +7,19 @@ import JobAdvertFilter from "../pages/JobAdverts/JobAdvertFilter";
 import FindJob from "../pages/JobAdverts/FindJob";
 import EmployerManagement from "./EmployerManagement";
 import AdminManagement from "./AdminManagement";
+import HomePage from "./HomePage";
 
 export default function Dashboard() {
   return (
     <div>
       
+              <Route exact path="/" component={FindJob} />
+              <Route exact path="/" component={HomePage} />
+              
+
       <Grid>
         <Grid.Row columns={16} centered>
-          <Route exact path="/jobadverts" component={FindJob} />
+          <Route  path="/jobadverts" component={FindJob} />
           <Route exact path="/jobadverts/:jobAdvertId" component={FindJob} />
         </Grid.Row>
       </Grid>
