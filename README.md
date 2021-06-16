@@ -1,6 +1,12 @@
 # HRMS (Human Resource Management System)
 
-![first commit](https://user-images.githubusercontent.com/61651202/121256958-cb471080-c8b5-11eb-8ff9-ff904113aeeb.png)
+![2-1](https://user-images.githubusercontent.com/61651202/122143787-d45a5380-ce5a-11eb-9652-19973aa6ccb3.png)
+![2-3](https://user-images.githubusercontent.com/61651202/122143793-d6bcad80-ce5a-11eb-8eb0-62b2c4274899.png)
+![2-4](https://user-images.githubusercontent.com/61651202/122143798-d7edda80-ce5a-11eb-81a1-869b202ef86c.png)
+![2-5](https://user-images.githubusercontent.com/61651202/122143801-dae8cb00-ce5a-11eb-9db1-6aa65b7fab4e.png)
+![2-2](https://user-images.githubusercontent.com/61651202/122143804-dc19f800-ce5a-11eb-8930-53824926f5fe.png)
+![2-6](https://user-images.githubusercontent.com/61651202/122143808-dd4b2500-ce5a-11eb-8918-573ee2667479.png)
+![2-7](https://user-images.githubusercontent.com/61651202/122226601-ce965980-cebe-11eb-98ed-87ce75d419d0.png)
 
 # UML Component Diagram
 
