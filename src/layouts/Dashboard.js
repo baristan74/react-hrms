@@ -1,23 +1,48 @@
 import React from "react";
-import { Container, Grid } from "semantic-ui-react";
-import SideBar from "./Sidebar";
+import { Container, Grid, GridColumn } from "semantic-ui-react";
 import JobAdvertList from "../pages/JobAdverts/JobAdvertList";
+import { Route } from "react-router";
+import JobAdvertDetail from "../pages/JobAdverts/JobAdvertDetail";
+import JobAdvertFilter from "../pages/JobAdverts/JobAdvertFilter";
+import FindJob from "../pages/JobAdverts/FindJob";
+import EmployerManagement from "./EmployerManagement";
+import AdminManagement from "./AdminManagement";
 
 export default function Dashboard() {
   return (
     <div>
+      
+      <Grid>
+        <Grid.Row columns={16} centered>
+          <Route exact path="/jobadverts" component={FindJob} />
+          <Route exact path="/jobadverts/:jobAdvertId" component={FindJob} />
+        </Grid.Row>
+      </Grid>
       <Container>
         <Grid>
           <Grid.Row>
-            <Grid.Column width={3}>
-              <SideBar />
+            <Grid.Column width={4}>
+              <Route exact path="/jobadverts" component={JobAdvertFilter} />
+              <Route exact path="/jobadverts/:id" component={JobAdvertFilter} />
             </Grid.Column>
-            <Grid.Column width={13}>
-              <JobAdvertList />
-            </Grid.Column>
+            <GridColumn width={12}>
+              <Route exact path="/jobadverts" component={JobAdvertList} />
+              <Route
+                exact
+                path="/jobadverts/:id"
+                component={JobAdvertDetail}
+              />
+            </GridColumn>
           </Grid.Row>
         </Grid>
       </Container>
+
+      <Container>
+              <Route  path="/employer" component={EmployerManagement} />
+              <Route  path="/admin" component={AdminManagement} />
+        </Container>
+
+
     </div>
   );
 }

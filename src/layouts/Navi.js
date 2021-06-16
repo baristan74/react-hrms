@@ -1,8 +1,24 @@
-import React from "react";
-import { Button, Container, Icon, Menu, Segment,Image } from "semantic-ui-react";
-import FindJob from "./FindJob";
+import React, { useState } from "react";
+import { NavLink, useHistory } from "react-router-dom";
+import { Container, Icon, Menu, Segment, Image } from "semantic-ui-react";
+
+
+import SignedIn from "./SignedIn";
+import SignedOut from "./SignedOut";
 
 export default function Navi() {
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const history = useHistory()
+
+function handleSignOut() {
+  setIsAuthenticated(false)
+  history.push("/")
+}
+
+function handleSignIn() {
+  setIsAuthenticated(true)
+}
+
   return (
     <div>
       <Segment.Group>
@@ -10,13 +26,11 @@ export default function Navi() {
           <Menu inverted fixed="top" size="large">
             <Container>
               <Menu.Item>
-                
-              <Image size="tiny" src={"../assets/hrms-logo.png"} />
-             
+                <Image size="tiny" src={"../assets/hrms-logo.png"} />
               </Menu.Item>
               <Menu.Menu position="left">
-                <Menu.Item>
-                  Find Job
+                <Menu.Item as={NavLink} to="/jobadverts">
+                  İş İlanları
                   <Icon name="search" />
                 </Menu.Item>
                 <Menu.Item>Companies</Menu.Item>
@@ -24,17 +38,13 @@ export default function Navi() {
 
               <Menu.Menu position="right">
                 <Menu.Item>
-                  <Button inverted>Sign Up</Button>
-                </Menu.Item>
-                <Menu.Item>
-                  <Button inverted>Sign in</Button>
+                  {isAuthenticated ? <SignedIn signOut={handleSignOut}/>  : <SignedOut signIn={handleSignIn}/>}
                 </Menu.Item>
               </Menu.Menu>
             </Container>
           </Menu>
         </Segment>
       </Segment.Group>
-      <FindJob />
     </div>
   );
 }

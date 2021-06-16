@@ -18,7 +18,7 @@ export default function FindJob() {
         <Segment inverted />
         <Segment inverted placeholder>
           <Container>
-          <Form size="medium">
+          <Form>
             <Grid columns={4} stackable textAlign="center">
               <Grid.Row verticalAlign="middle">
                 <Grid.Column>
