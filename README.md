@@ -6,7 +6,7 @@
 ![2-5](https://user-images.githubusercontent.com/61651202/122143801-dae8cb00-ce5a-11eb-9db1-6aa65b7fab4e.png)
 ![2-2](https://user-images.githubusercontent.com/61651202/122143804-dc19f800-ce5a-11eb-8930-53824926f5fe.png)
 ![2-6](https://user-images.githubusercontent.com/61651202/122143808-dd4b2500-ce5a-11eb-8918-573ee2667479.png)
-
+![2-7](https://user-images.githubusercontent.com/61651202/122226601-ce965980-cebe-11eb-98ed-87ce75d419d0.png)
 
 # UML Component Diagram
 
