@@ -1,3 +1,13 @@
+# HRMS (Human Resource Management System)
+
+![first commit](https://user-images.githubusercontent.com/61651202/121256958-cb471080-c8b5-11eb-8ff9-ff904113aeeb.png)
+
+# UML Component Diagram
+
+![Ekran görüntüsü 2021-06-08 224628](https://user-images.githubusercontent.com/61651202/121256969-ceda9780-c8b5-11eb-9990-f823d4d308f7.png)
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
