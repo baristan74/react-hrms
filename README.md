@@ -1,6 +1,5 @@
 # HRMS (Human Resource Management System)
 
-![UML COMPONENT](https://user-images.githubusercontent.com/61651202/122412054-eee11980-cf8d-11eb-80a5-2416caf77e7f.png)
 ![home-page](https://user-images.githubusercontent.com/61651202/122411861-c822e300-cf8d-11eb-9a7a-b8609e3b4814.png)
 ![2-5](https://user-images.githubusercontent.com/61651202/122412153-01f3e980-cf8e-11eb-95f5-5b4b3505b57e.png)
 ![2-7](https://user-images.githubusercontent.com/61651202/122412175-05877080-cf8e-11eb-9307-a2ede411cd6a.png)
@@ -10,13 +9,8 @@
 ![2-2](https://user-images.githubusercontent.com/61651202/122412234-11733280-cf8e-11eb-80f8-21fe21005137.png)
 ![2-6](https://user-images.githubusercontent.com/61651202/122412244-133cf600-cf8e-11eb-9517-21fb26c72a9e.png)
 
-
-
 # UML Component Diagram
-
-![Ekran görüntüsü 2021-06-08 224628](https://user-images.githubusercontent.com/61651202/121256969-ceda9780-c8b5-11eb-9990-f823d4d308f7.png)
-
-
+![UML COMPONENT](https://user-images.githubusercontent.com/61651202/122412054-eee11980-cf8d-11eb-80a5-2416caf77e7f.png)
 
 # Getting Started with Create React App
 
