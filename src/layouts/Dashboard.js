@@ -8,11 +8,11 @@ import FindJob from "../pages/JobAdverts/FindJob";
 import EmployerManagement from "./EmployerManagement";
 import AdminManagement from "./AdminManagement";
 import HomePage from "./HomePage";
-
+import { ToastContainer } from "react-toastify";
 export default function Dashboard() {
   return (
     <div>
-      
+      <ToastContainer position="bottom-right"/>
               <Route exact path="/" component={FindJob} />
               <Route exact path="/" component={HomePage} />
               

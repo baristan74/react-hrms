@@ -32,4 +32,10 @@ export default class JobAdvertService{
     getAllByIsConfirmedByEmployeeFalse(){
         return axios.get("http://localhost:8080/api/jobAdverts/getallbyisconfirmedbyemployeefalse")
     }
+
+    getAllActiveAndByPageNumber(pageNumber) {
+        return axios.get(
+          "http://localhost:8080/api/jobAdverts/getallbyactiveandpagination?pageNumber=" +pageNumber);
+    }
+    
 }

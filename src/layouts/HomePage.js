@@ -30,7 +30,7 @@ export default function HomePage() {
 
             <Grid.Column style={{ marginLeft: "10px" }}>
               <Label size="massive" as="a" color="teal" tag>
-                Hangi meslek ne işe yarar
+                Hangi meslek ne iş yapar
                 <Icon link name="help" />
               </Label>
               <Label
