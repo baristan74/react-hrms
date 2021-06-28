@@ -39,6 +39,8 @@ export default function JobAdvertList() {
       .then((result) => setJobAdverts(result.data.data));
   };
 
+  
+
   return (
     <div>
       <Container>

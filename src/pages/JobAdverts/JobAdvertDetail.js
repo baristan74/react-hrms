@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { Rail, Segment, Header, Table, Button, Icon } from "semantic-ui-react";
+import { Rail, Segment, Header, Table, Button, Icon,Label } from "semantic-ui-react";
 import JobAdvertService from "../../services/jobAdvertService";
 
 export default function JobAdvertDetail() {
@@ -80,7 +80,7 @@ export default function JobAdvertDetail() {
                     <Header.Content>Maaş Aralığı</Header.Content>
                   </Header>
                 </Table.Cell>
-                <Table.Cell collapsing>{jobAdvert?.minSalary}<Icon name="try"/>-{jobAdvert?.maxSalary}<Icon name="try"/></Table.Cell>
+                <Table.Cell collapsing>{jobAdvert?.minSalary}<Icon name="try"/><Label>~</Label> {jobAdvert?.maxSalary}<Icon name="try"/></Table.Cell>
               </Table.Row>
               <Table.Row>
                 <Table.Cell collapsing>
