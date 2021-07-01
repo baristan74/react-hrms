@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Button, Card, Icon, Grid} from "semantic-ui-react";
 import CvEducationService from "../../../services/cvEducationService";
-import AddEducationModel from "./CvModals/AddEducationModal";
+import AddEducationModal from "./CvModals/AddEducationModal";
 import UpdateEducationModal from "./CvModals/UpdateEducationModal";
 
 export default function Education() {
@@ -22,7 +22,7 @@ export default function Education() {
         <Grid divided='vertically'>
     <Grid.Row columns={3}>
       <Grid.Column>
-      <AddEducationModel
+      <AddEducationModal
           triggerButton={
             <Button floated="left" primary inverted >
             <Icon name="plus" />
@@ -32,7 +32,7 @@ export default function Education() {
           />
       </Grid.Column>
       <Grid.Column>
-      <Card.Header style={{marginTop:"1em"}}>
+      <Card.Header style={{marginTop:"1em",fontSize:"20px",fontWeight:"bold"}}>
             {" "}
             Eğitim Bilgileri
           </Card.Header>

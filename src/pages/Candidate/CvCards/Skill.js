@@ -15,12 +15,12 @@ export default function Skill() {
 
   return (
     <div>
-      <Card fluid style={{ marginLeft: "3em" }}>
+      <Card fluid style={{ marginLeft: "3em",marginTop:"3em" }}>
         <Card.Content>
                 
                   
                 
-                <Card.Header style={{ marginBottom: "1em" }}>
+                <Card.Header style={{ marginBottom: "1em",fontSize:"20px",fontWeight:"bold"}} >
                   {" "}
                   Beceriler 
                 </Card.Header>
