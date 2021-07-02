@@ -10,17 +10,11 @@ export default function EmployerJobAdvertMenu() {
     <div>
       <Menu vertical>
 
-      <Menu.Item as={NavLink} exact to="/candidate"  name="profil" active={activeItem === "profil"}>
-            
-            <Label color="grey">
-              <Icon name="info" />
-            </Label>
-            Profil
-          </Menu.Item>
+      
 
       
 
-        <Menu.Item as={NavLink} to="/candidate/cv"  name="cv" active={activeItem === "cv"}>
+        <Menu.Item as={NavLink} exact to="/candidate"  name="cv" active={activeItem === "cv"}>
           <Label color="grey">
             <Icon name="list" />
           </Label>

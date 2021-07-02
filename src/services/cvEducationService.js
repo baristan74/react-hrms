@@ -12,5 +12,9 @@ export default class CvEducationService {
       return axios.get("http://localhost:8080/api/cveducations/getallbycandidateidorderbyfinishdatedesc?candidateId="+candidateId);
   }
 
+  delete(cvEducation){
+    return axios.post("http://localhost:8080/api/cveducations/delete",cvEducation);
+  }
+
   
 }

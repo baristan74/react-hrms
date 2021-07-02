@@ -1,14 +1,21 @@
 import React, { useEffect, useState } from "react";
-import { Button, Card, Icon, Grid} from "semantic-ui-react";
+import { Button, Card, Icon, Grid, Modal} from "semantic-ui-react";
 import CvEducationService from "../../../services/cvEducationService";
 import AddEducationModal from "./CvModals/AddEducationModal";
 import UpdateEducationModal from "./CvModals/UpdateEducationModal";
 
 export default function Education() {
+  const [open, setOpen] = React.useState(false);
   const [cvEducations, setCvEducations] = useState([]);
 
+  let cvEducationService = new CvEducationService();
+
+  const deleteCvEducation = (cveducation) => {
+    cvEducationService.delete(cveducation).then((result) => console.log(result));
+    window.location.reload();
+  };
+
   useEffect(() => {
-    let cvEducationService = new CvEducationService();
     cvEducationService
       .getAllByCandidateIdOrderByFinishDateDesc(16) //fake id
       .then((result) => setCvEducations(result.data.data));
@@ -16,7 +23,7 @@ export default function Education() {
 
   return (
     <div>
-      <Card fluid style={{ marginLeft: "3em" }}>
+      <Card fluid style={{ marginLeft: "3em",marginTop:"3em" }}>
         <Card.Content>
           
         <Grid divided='vertically'>
@@ -99,7 +106,29 @@ export default function Education() {
                   </Grid.Row>
                 </Grid>
 
-                <Button floated="right" color="red" icon="trash alternate"></Button>
+                <Modal
+                  onClose={() => setOpen(false)}
+                  onOpen={() => setOpen(true)}
+                  open={open}
+                  size="small"
+                  trigger={<Button floated="right" color="red" icon="trash" />}
+                >
+                  <Modal.Content>
+                    <p>Silmek istediğinize emin misiniz?</p>
+                  </Modal.Content>
+                  <Modal.Actions>
+                    <Button color="red" inverted onClick={() => setOpen(false)}>
+                      <Icon name="remove" /> No
+                    </Button>
+                    <Button
+                      color="green"
+                      inverted
+                      onClick={() => deleteCvEducation(cvEducation)}
+                    >
+                      <Icon name="checkmark" /> Yes
+                    </Button>
+                  </Modal.Actions>
+                </Modal>
               </Card.Content>
             </Card>
           ))}
