@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { Button, Card, Icon, Grid } from "semantic-ui-react";
 import CvLinkService from "../../../services/cvLinkService";
 import AddLinkModal from "./CvModals/AddLinkModal";
-import UpdateLinkModal from "./CvModals/UpdateLinkModal";
 import {  Header,  Modal } from 'semantic-ui-react'
 
 
