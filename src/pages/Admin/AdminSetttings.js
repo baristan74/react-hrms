@@ -8,7 +8,9 @@ export default function AdminSetttings() {
 
   useEffect(() => {
     let employeeService = new EmployeeService();
-    employeeService.getById(26).then((result) => setEmployee(result.data.data));
+    employeeService
+    .getById(26)//fake id
+    .then((result) => setEmployee(result.data.data));
   }, []);
   
 

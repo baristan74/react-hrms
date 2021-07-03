@@ -2,6 +2,11 @@ import React from "react";
 import { Button, Input, Label, Menu } from "semantic-ui-react";
 
 export default function JobAdvertFilter() {
+
+  
+
+
+
   return (
     <div>
       <Menu vertical style={{marginTop:"2em"}}>

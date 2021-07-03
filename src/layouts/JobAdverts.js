@@ -3,20 +3,13 @@ import JobAdvertDetail from "../pages/JobAdverts/JobAdvertDetail";
 import JobAdvertFilter from "../pages/JobAdverts/JobAdvertFilter";
 import JobAdvertList from "../pages/JobAdverts/JobAdvertList";
 import { Container, Grid, GridColumn } from "semantic-ui-react";
-import FindJob from '../pages/JobAdverts/FindJob';
 import { Route } from 'react-router';
 
 export default function JobAdvert() {
     return (
         <div>
-            <Grid>
-        <Grid.Row columns={16} centered>
-          <Route  path="/jobadverts" component={FindJob} />
-          <Route exact path="/jobadverts/:jobAdvertId" component={FindJob} />
-        </Grid.Row>
-      </Grid>
       <Container>
-        <Grid>
+        <Grid style={{marginTop:"3em"}}>
           <Grid.Row>
             <Grid.Column width={4}>
               <Route exact path="/jobadverts" component={JobAdvertFilter} />

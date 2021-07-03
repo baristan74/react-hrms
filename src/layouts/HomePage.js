@@ -14,7 +14,7 @@ export default function HomePage() {
     <div>
       <Segment
         placeholder
-        style={{ marginTop: "-1px", height: "35em" }}
+        style={{ marginTop:"40px" ,height: "35em" }}
         inverted
         color="grey"
       >

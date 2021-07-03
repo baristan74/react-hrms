@@ -4,10 +4,17 @@ import { Label, Menu, Icon, Button } from "semantic-ui-react";
 import AddJobAdvert from "./AddJobAdvert";
 export default function EmployerJobAdvertMenu() {
    
-    const activeItem =["list","management"]
+    const activeItem =["list","management","settings"]
   return (
     <div>
       <Menu vertical>
+
+      <Menu.Item as={NavLink} exact to="/employer"  name="settings" active={activeItem === 'settings'}>
+          <Label color="grey">
+            <Icon name="setting" />
+          </Label>
+          Bilgilerim
+        </Menu.Item>
 
         <Menu.Item as={NavLink} to="/employer/jobadvertlist"  name="list" active={activeItem === 'list'}>
           <Label color="grey">

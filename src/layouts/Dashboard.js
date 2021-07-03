@@ -1,7 +1,6 @@
 import React from "react";
-import { Container, Grid, GridColumn } from "semantic-ui-react";
+import { Container} from "semantic-ui-react";
 import { Route } from "react-router";
-import FindJob from "../pages/JobAdverts/FindJob";
 import EmployerManagement from "./EmployerManagement";
 import AdminManagement from "./AdminManagement";
 import HomePage from "./HomePage";
@@ -13,7 +12,6 @@ export default function Dashboard() {
   return (
     <div>
       <ToastContainer position="bottom-right"/>
-              <Route exact path="/" component={FindJob} />
               <Route exact path="/" component={HomePage} />
              <Route path="/jobadverts" component={JobAdverts}/>
 

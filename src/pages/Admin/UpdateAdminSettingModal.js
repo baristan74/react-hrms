@@ -33,13 +33,14 @@ export default function UpdateAdminSettingModal({ triggerButton,employee }) {
         if (result.data.success) {
           window.location.reload();
         }
+        console.log(result);
       });
     },
   });
 
   console.log(employee);
 
-  
+  //formda güncellerken verileri getirmiyor ama güncelleme gerçekleşiyor(sonra bakılıcak)
 
   return (
     <div>
@@ -136,7 +137,6 @@ export default function UpdateAdminSettingModal({ triggerButton,employee }) {
               labelPosition="right"
               icon="checkmark"
               type="submit"
-              
               positive
             />
           </Form>

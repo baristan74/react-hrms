@@ -23,16 +23,8 @@ export default function CandidateCv() {
     <div>
 
 
-      <Grid>
-        <Grid.Row>
-          <Grid.Column width={5}>
           <ProfilImage candidate={candidate}/>
-          </Grid.Column>
-          <Grid.Column width={11}>
           <CoverLetter />
-          </Grid.Column>
-        </Grid.Row>
-      </Grid>
 
       
       

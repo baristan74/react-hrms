@@ -35,7 +35,9 @@ function handleSignIn() {
                   İş İlanları
                   <Icon name="search" />
                 </Menu.Item>
-                <Menu.Item>Companies</Menu.Item>
+                <Menu.Item as={NavLink} to="/employer">Şirket Yönetimi</Menu.Item>
+                <Menu.Item as={NavLink} to="/admin">Admin Yönetimi</Menu.Item>
+                <Menu.Item as={NavLink} to="/candidate">İş Arayan Paneli</Menu.Item>
               </Menu.Menu>
 
               <Menu.Menu position="right">

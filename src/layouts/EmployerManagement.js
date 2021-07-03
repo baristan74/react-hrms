@@ -4,6 +4,7 @@ import EmployerJobAdvertList from "../pages/EmployerManagement/EmployerJobAdvert
 import EmployerJobAdvertMenu from "../pages/EmployerManagement/EmployerJobAdvertMenu";
 import { Route } from "react-router";
 import EmployerJobAdvertManagement from "../pages/EmployerManagement/EmployerJobAdvertManagement";
+import EmployerSettings from "../pages/EmployerManagement/EmployerSettings";
 
 export default function EmployerManagement() {
   return (
@@ -14,7 +15,7 @@ export default function EmployerManagement() {
             <EmployerJobAdvertMenu/>
           </Grid.Column>
           <Grid.Column width={13}>
-          <Route exact path="/employer" component={EmployerJobAdvertList} />
+          <Route exact path="/employer" component={EmployerSettings} />
           <Route exact path="/employer/jobadvertlist" component={EmployerJobAdvertList} />
           <Route path="/employer/jobadvertmanagement" component={EmployerJobAdvertManagement} />
           </Grid.Column>
