@@ -23,6 +23,7 @@ export default function UpdateAdminSettingModal({ triggerButton,employee }) {
         email: employee.email,
         password: employee.password,
     },
+    enableReinitialize:true,
     validationSchema: EmployeeSchema,
     onSubmit: (values) => {
         employee.firstName=values.firstName;

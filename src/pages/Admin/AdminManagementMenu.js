@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 import { Menu, Label, Icon} from "semantic-ui-react";
 
 export default function AdminManagementMenu() {
-  const activeItem = ["management","setting"];
+  const activeItem = ["jobadvert","setting","updateemployer"];
   return (
     <div>
       <Menu vertical>
@@ -23,14 +23,26 @@ export default function AdminManagementMenu() {
 
         <Menu.Item
           as={NavLink}
-          to="/admin/jobadvertmanagement"
-          name="management"
-          active={activeItem === "management"}
+          to="/admin/updateemployermanagement"
+          name="updateemployer"
+          active={activeItem === "updateemployer"}
         >
           <Label color="grey">
             <Icon name="check" />
           </Label>
-          İlan Yönetimi
+          Güncelleme Onayı Bekleyen Şirketler
+        </Menu.Item>
+
+        <Menu.Item
+          as={NavLink}
+          to="/admin/jobadvertmanagement"
+          name="jobadvert"
+          active={activeItem === "jobadvert"}
+        >
+          <Label color="grey">
+            <Icon name="check" />
+          </Label>
+          Onay Bekleyen İlanlar
         </Menu.Item>
       </Menu>
     </div>

@@ -1,10 +1,10 @@
 import React from "react";
 import { Grid } from "semantic-ui-react";
-import EmployerJobAdvertList from "../pages/EmployerManagement/EmployerJobAdvertList";
 import EmployerJobAdvertMenu from "../pages/EmployerManagement/EmployerJobAdvertMenu";
 import { Route } from "react-router";
-import EmployerJobAdvertManagement from "../pages/EmployerManagement/EmployerJobAdvertManagement";
-import EmployerSettings from "../pages/EmployerManagement/EmployerSettings";
+import EmployerProfil from "../pages/EmployerManagement/EmployerSettings/EmployerProfil";
+import EmployerJobAdvertList from "../pages/EmployerManagement/JobAdverts/EmployerJobAdvertList";
+import EmployerJobAdvertManagement from "../pages/EmployerManagement/JobAdverts/EmployerJobAdvertManagement";
 
 export default function EmployerManagement() {
   return (
@@ -15,7 +15,7 @@ export default function EmployerManagement() {
             <EmployerJobAdvertMenu/>
           </Grid.Column>
           <Grid.Column width={13}>
-          <Route exact path="/employer" component={EmployerSettings} />
+          <Route exact path="/employer" component={EmployerProfil} />
           <Route exact path="/employer/jobadvertlist" component={EmployerJobAdvertList} />
           <Route path="/employer/jobadvertmanagement" component={EmployerJobAdvertManagement} />
           </Grid.Column>

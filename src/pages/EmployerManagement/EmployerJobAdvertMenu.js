@@ -1,7 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import { Label, Menu, Icon, Button } from "semantic-ui-react";
-import AddJobAdvert from "./AddJobAdvert";
+import AddJobAdvert from "./JobAdverts/AddJobAdvert";
 export default function EmployerJobAdvertMenu() {
    
     const activeItem =["list","management","settings"]

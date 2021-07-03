@@ -9,11 +9,11 @@ import {
 } from "semantic-ui-react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
-import JobAdvertService from "../../services/jobAdvertService";
-import EmploymentTypeService from "../../services/employmentTypeService";
-import CityService from "../../services/cityService";
-import WorkingTypeService from "../../services/workingTypeService";
-import JobPositionService from "../../services/jobPositionService";
+import JobAdvertService from "../../../services/jobAdvertService";
+import EmploymentTypeService from "../../../services/employmentTypeService";
+import CityService from "../../../services/cityService";
+import WorkingTypeService from "../../../services/workingTypeService";
+import JobPositionService from "../../../services/jobPositionService";
 import swal from 'sweetalert';
 
 export default function AddJobAdvert({triggerButton }) {

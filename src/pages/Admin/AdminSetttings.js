@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Card, Feed, Button, Icon } from "semantic-ui-react";
+import { Card, Feed, Button, Icon, Table } from "semantic-ui-react";
 import EmployeeService from "../../services/employeeService";
 import UpdateAdminSettingModal from "./UpdateAdminSettingModal";
 
@@ -9,10 +9,9 @@ export default function AdminSetttings() {
   useEffect(() => {
     let employeeService = new EmployeeService();
     employeeService
-    .getById(26)//fake id
-    .then((result) => setEmployee(result.data.data));
+      .getById(26) //fake id
+      .then((result) => setEmployee(result.data.data));
   }, []);
-  
 
   return (
     <div>
@@ -30,31 +29,23 @@ export default function AdminSetttings() {
           <Card.Header>Profil Bilgileri</Card.Header>
         </Card.Content>
         <Card.Content>
-          <Feed>
-            <Feed.Event>
-              <Feed.Content>
-                <Card.Header style={{ marginBottom: "5px" }} content="İsim" />
-                <Feed.Summary>{employee.firstName}</Feed.Summary>
-              </Feed.Content>
-            </Feed.Event>
+          <Table>
+            <Table.Header>
+              <Table.Row>
+                <Table.HeaderCell>İsim</Table.HeaderCell>
+                <Table.HeaderCell>Soyisim</Table.HeaderCell>
+                <Table.HeaderCell>Email</Table.HeaderCell>
+              </Table.Row>
+            </Table.Header>
 
-            <Feed.Event>
-              <Feed.Content>
-                <Card.Header
-                  style={{ marginBottom: "5px" }}
-                  content="Soyisim"
-                />
-                <Feed.Summary>{employee.lastName}</Feed.Summary>
-              </Feed.Content>
-            </Feed.Event>
-
-            <Feed.Event>
-              <Feed.Content>
-                <Card.Header style={{ marginBottom: "5px" }} content="E-Mail" />
-                <Feed.Summary>{employee.email}</Feed.Summary>
-              </Feed.Content>
-            </Feed.Event>
-          </Feed>
+            <Table.Body>
+              <Table.Row>
+                <Table.Cell>{employee.firstName}</Table.Cell>
+                <Table.Cell>{employee.lastName}</Table.Cell>
+                <Table.Cell>{employee.email}</Table.Cell>
+              </Table.Row>
+            </Table.Body>
+          </Table>
         </Card.Content>
       </Card>
     </div>
