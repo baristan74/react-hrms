@@ -1,19 +1,14 @@
 import React, { useEffect, useState } from "react";
-import { Button, Card, Icon, Grid, Header, Modal } from "semantic-ui-react";
+import { Button, Card, Icon, Grid } from "semantic-ui-react";
 import CvJobExperienceService from "../../../services/cvJobExperienceService";
 import AddJobExperienceModal from "./CvModals/AddJobExperienceModal";
 import UpdateJobExperienceModal from "./CvModals/UpdateJobExperienceModal";
+import DeleteJobExperienceModal from "./CvModals/DeleteJobExperienceModal";
 
 export default function JobExperience() {
   const [cvJobExperiences, setCvJobExperiences] = useState([]);
-  const [open, setOpen] = React.useState(false);
-  
-  let cvJobExperienceService = new CvJobExperienceService();
 
-  const deleteCvJobExperience = (cvjobexperience) => {
-    cvJobExperienceService.delete(cvjobexperience).then((result) => console.log(result));
-    window.location.reload();
-  };
+  let cvJobExperienceService = new CvJobExperienceService();
 
   useEffect(() => {
     cvJobExperienceService
@@ -23,14 +18,14 @@ export default function JobExperience() {
 
   return (
     <div>
-      <Card fluid style={{ marginLeft: "3em", marginTop: "3em" }}>
+      <Card inverted color="red" fluid style={{ marginLeft: "3em", marginTop: "3em" }}>
         <Card.Content>
           <Grid divided="vertically">
             <Grid.Row columns={3}>
               <Grid.Column>
                 <AddJobExperienceModal
                   triggerButton={
-                    <Button floated="left" primary inverted>
+                    <Button inverted floated="left" primary inverted>
                       <Icon name="plus" />
                       Yeni iş deneyimi ekle
                     </Button>
@@ -57,7 +52,7 @@ export default function JobExperience() {
               <Card.Content>
                 <UpdateJobExperienceModal
                   triggerButton={
-                    <Button floated="right" color="green" icon="pencil" />
+                    <Button inverted floated="right" color="green" icon="pencil" />
                   }
                   cvJobExperience={cvJobExperience}
                 />
@@ -102,29 +97,12 @@ export default function JobExperience() {
                   </Grid.Row>
                 </Grid>
 
-                <Modal
-                  onClose={() => setOpen(false)}
-                  onOpen={() => setOpen(true)}
-                  open={open}
-                  size="small"
-                  trigger={<Button floated="right" color="red" icon="trash" />}
-                >
-                  <Modal.Content>
-                    <p>Silmek istediğinize emin misiniz?</p>
-                  </Modal.Content>
-                  <Modal.Actions>
-                    <Button color="red" inverted onClick={() => setOpen(false)}>
-                      <Icon name="remove" /> No
-                    </Button>
-                    <Button
-                      color="green"
-                      inverted
-                      onClick={() => deleteCvJobExperience(cvJobExperience)}
-                    >
-                      <Icon name="checkmark" /> Yes
-                    </Button>
-                  </Modal.Actions>
-                </Modal>
+                <DeleteJobExperienceModal
+                  triggerButton={
+                    <Button inverted floated="right" color="red" icon="trash" />
+                  }
+                  cvJobExperience={cvJobExperience}
+                />
               </Card.Content>
             </Card>
           ))}

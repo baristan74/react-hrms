@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Card, Feed, Button, Icon, Table, Checkbox } from "semantic-ui-react";
+import { Card, Label, Button, Icon, Table, Checkbox } from "semantic-ui-react";
 import EmployerService from "../../../services/employerService";
 import EmployerUpdateConfirmByEmployeeService from "../../../services/employerUpdateConfirmByEmployeeService";
 import UpdateEmployerSettingModal from "./UpdateEmployerSettingModal";
@@ -17,16 +17,25 @@ export default function EmployerProfil() {
     <div>
       <Card fluid color="red">
         <Card.Content>
-          <UpdateEmployerSettingModal
-            triggerButton={
-              <Button inverted color="blue " floated="right" icon>
-                <Icon name="add" />
-                Bilgileri güncelle
-              </Button>
-            }
-            employer={employer}
-          />
-          <Card.Header>Şirket Bilgileri</Card.Header>
+            {employer.confirmByEmployee ? 
+            (
+                
+                <Label floated="right" color="orange">Güncelleme Admin Tarafından Onay Bekliyor</Label>
+            )
+            :
+            (
+                <UpdateEmployerSettingModal
+                triggerButton={
+                  <Button inverted color="blue " floated="right" icon>
+                    <Icon name="add" />
+                    Bilgileri güncelle
+                  </Button>
+                }
+                employer={employer}
+              />
+            )}
+         
+          <Card.Header style={{marginTop:"1em"}}>Şirket Bilgileri</Card.Header>
         </Card.Content>
         <Card.Content>
           <Table>

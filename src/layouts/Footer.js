@@ -38,7 +38,7 @@ export default function footer() {
             </Grid.Column>
 
             <Grid.Column width={3}>
-              <Image size="small" src={"../assets/hrms2.png"} />
+              <Image size="small" src={"../assets/hrms-logo1.png"} />
             </Grid.Column>
           </Grid>
 

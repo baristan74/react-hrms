@@ -21,13 +21,8 @@ export default function CandidateCv() {
     }, []);
   return (
     <div>
-
-
-          <ProfilImage candidate={candidate}/>
-          <CoverLetter />
-
-      
-      
+      <ProfilImage candidate={candidate}/>
+      <CoverLetter />
       <Education />
       <Skill />
       <JobExperience />

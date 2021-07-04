@@ -2,19 +2,12 @@ import React, { useEffect, useState } from "react";
 import { Button, Card, Icon, Grid } from "semantic-ui-react";
 import CvLinkService from "../../../services/cvLinkService";
 import AddLinkModal from "./CvModals/AddLinkModal";
-import { Modal } from "semantic-ui-react";
+import DeleteLinkModal from "./CvModals/DeleteLinkModal";
 
 export default function Link() {
-  const [open, setOpen] = React.useState(false);
-
   const [cvLinks, setCvLinks] = useState([]);
 
   let cvLinkService = new CvLinkService();
-
-  const deleteCvLink = (link) => {
-    cvLinkService.delete(link).then((result) => console.log(result));
-    window.location.reload();
-  };
 
   useEffect(() => {
     cvLinkService
@@ -24,7 +17,7 @@ export default function Link() {
 
   return (
     <div>
-      <Card fluid style={{ marginLeft: "3em", marginTop: "3em" }}>
+      <Card inverted color="red" fluid style={{ marginLeft: "3em", marginTop: "3em" }}>
         <Card.Content>
           <Grid divided="vertically">
             <Grid.Row columns={3}>
@@ -66,37 +59,14 @@ export default function Link() {
                     <Card.Header>{cvLink.link}</Card.Header>
                   </Grid.Column>
                   <Grid.Column>
-                    <Modal
-                      onClose={() => setOpen(false)}
-                      onOpen={() => setOpen(true)}
-                      open={open}
-                      size="tiny"
-                      trigger={
-                        <Button icon color="red">
+                    <DeleteLinkModal
+                      triggerButton={
+                        <Button inverted icon color="red">
                           <Icon name="trash" />
                         </Button>
                       }
-                    >
-                      <Modal.Content>
-                        <p>Silmek istediğinize emin misiniz?</p>
-                      </Modal.Content>
-                      <Modal.Actions>
-                        <Button
-                          color="red"
-                          inverted
-                          onClick={() => setOpen(false)}
-                        >
-                          <Icon name="remove" /> No
-                        </Button>
-                        <Button
-                          color="green"
-                          inverted
-                          onClick={() => deleteCvLink(cvLink)}
-                        >
-                          <Icon name="checkmark" /> Yes
-                        </Button>
-                      </Modal.Actions>
-                    </Modal>
+                      cvLink={cvLink}
+                    />
                   </Grid.Column>
                 </Grid.Row>
               </Grid>

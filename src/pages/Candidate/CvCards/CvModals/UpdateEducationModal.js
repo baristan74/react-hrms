@@ -50,6 +50,7 @@ export default function UpdateEducationModal({ triggerButton, cvEducation }) {
         onClose={() => setOpen(false)}
         onOpen={() => setOpen(true)}
         open={open}
+        closeIcon
         trigger={triggerButton}
         size="tiny"
       >

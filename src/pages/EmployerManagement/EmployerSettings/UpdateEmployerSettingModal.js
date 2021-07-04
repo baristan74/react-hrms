@@ -4,11 +4,13 @@ import * as Yup from "yup";
 import { useFormik } from "formik";
 import swal from "sweetalert";
 import EmployerUpdateConfirmByEmployeeService from "../../../services/employerUpdateConfirmByEmployeeService";
+import EmployerService from "../../../services/employerService";
 
 export default function UpdateEmployerSettingModal({ triggerButton,employer }) {
   const [open, setOpen] = React.useState(false);
 
   let employerUpdateConfirmByEmployeeService = new EmployerUpdateConfirmByEmployeeService();
+
 
   let EmployeeSchema = Yup.object().shape({
     companyName: Yup.string().required("Şirket Adı boş bırakılamaz!"),
@@ -32,6 +34,8 @@ export default function UpdateEmployerSettingModal({ triggerButton,employer }) {
     validationSchema: EmployeeSchema,
 
     onSubmit: (values) => {
+        changeIsConfirmedByEmployee(employer.id)
+
         let employerUpdateConfirmByEmployee={
             id:values.id,
             email: values.email,
@@ -49,6 +53,10 @@ export default function UpdateEmployerSettingModal({ triggerButton,employer }) {
     },
   });
 
+  let changeIsConfirmedByEmployee = (employerId) => {
+      let employerService = new EmployerService();
+    employerService.changeIsConfirmedByEmployee(employerId);
+  };
 
   return (
     <div>
@@ -135,7 +143,6 @@ export default function UpdateEmployerSettingModal({ triggerButton,employer }) {
                   </div>
                 )}
                 </Form.Group>
-                <Form.Group>
                 <Form.Input
                 fluid
                 name="phoneNumber"
@@ -153,7 +160,6 @@ export default function UpdateEmployerSettingModal({ triggerButton,employer }) {
                     {formik.errors.phoneNumber}
                   </div>
                 )}
-            </Form.Group>
 
             <Divider></Divider>
             <Button color="black" onClick={() => setOpen(false)}>

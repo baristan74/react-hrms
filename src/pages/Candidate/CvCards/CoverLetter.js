@@ -15,7 +15,7 @@ export default function CoverLetter() {
 
   return (
     <div>
-      <Card fluid style={{ marginLeft: "3em", marginTop: "3em" }}>
+      <Card inverted color="red" fluid style={{ marginLeft: "3em", marginTop: "3em" }}>
         <Card.Content>
           <Card.Header
             style={{

@@ -2,17 +2,12 @@ import React, { useEffect, useState } from "react";
 import { Button, Card, Icon, Grid } from "semantic-ui-react";
 import CvLanguageService from "../../../services/cvLanguageService";
 import AddLanguageModal from "./CvModals/AddLanguageModal";
-import { Header, Modal, Rating } from "semantic-ui-react";
+import { Rating } from "semantic-ui-react";
+import DeleteLanguageModal from "./CvModals/DeleteLanguageModal";
 
 export default function Language() {
-  const [open, setOpen] = React.useState(false);
 
   let cvLanguageService = new CvLanguageService();
-
-  const deleteCvLanguage = (language) => {
-    cvLanguageService.delete(language).then((result) => console.log(result));
-    window.location.reload();
-  };
 
   const [cvLanguages, setCvLanguages] = useState([]);
 
@@ -54,12 +49,12 @@ export default function Language() {
           </Grid>
 
           {cvLanguages.map((cvLanguage, index) => (
-            <Card fluid key={index}>
+            <Card inverted color="red" fluid key={index}>
               <Grid columns={3} divided>
                 <Grid.Row>
                   <Grid.Column>
-                    <Card.Meta style={{ marginBottom: "3px" }}>
-                      {cvLanguage.language.name}
+                    <Card.Meta style={{ marginBottom: "3px"}}>
+                      <b>{cvLanguage.language.name}</b>
                     </Card.Meta>
                   </Grid.Column>
                   <Grid.Column>
@@ -72,37 +67,16 @@ export default function Language() {
                     </Card.Header>
                   </Grid.Column>
                   <Grid.Column>
-                    <Modal
-                      onClose={() => setOpen(false)}
-                      onOpen={() => setOpen(true)}
-                      open={open}
-                      size="tiny"
-                      trigger={
-                        <Button icon color="red">
+
+
+                    <DeleteLanguageModal
+                    triggerButton={
+                      <Button inverted icon color="red">
                           <Icon name="trash" />
                         </Button>
-                      }
-                    >
-                      <Modal.Content>
-                        <p>Silmek istediğinize emin misiniz?</p>
-                      </Modal.Content>
-                      <Modal.Actions>
-                        <Button
-                          color="red"
-                          inverted
-                          onClick={() => setOpen(false)}
-                        >
-                          <Icon name="remove" /> No
-                        </Button>
-                        <Button
-                          color="green"
-                          inverted
-                          onClick={() => deleteCvLanguage(cvLanguage)}
-                        >
-                          <Icon name="checkmark" /> Yes
-                        </Button>
-                      </Modal.Actions>
-                    </Modal>
+                    }
+                    cvLanguage={cvLanguage}
+                    />
                   </Grid.Column>
                 </Grid.Row>
               </Grid>

@@ -17,11 +17,16 @@ export default function AdminJobAdvertList() {
     .then((result)=> setEmployerUpdateConfirmByEmployees(result.data.data))
   }, []);
 
+  let changeIsConfirmedByEmployee = (employerId) => {
+    employerService.changeIsConfirmedByEmployee(employerId);
+  };
+
   let changeUpdateIsConfirmedByEmployee = (employerId) => {
     employerUpdateConfirmByEmployeeService.changeIsConfirmedByEmployee(employerId);
   };
 
   function handleConfirmedByEmployee(employer) {
+      changeIsConfirmedByEmployee(employer.id);
       changeUpdateIsConfirmedByEmployee(employer.id);
       employerService.add(employer).then((result) => {
         console.log(result.data.data);

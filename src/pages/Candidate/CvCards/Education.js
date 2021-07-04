@@ -1,19 +1,14 @@
 import React, { useEffect, useState } from "react";
-import { Button, Card, Icon, Grid, Modal} from "semantic-ui-react";
+import { Button, Card, Icon, Grid, Divider } from "semantic-ui-react";
 import CvEducationService from "../../../services/cvEducationService";
 import AddEducationModal from "./CvModals/AddEducationModal";
+import DeleteEducationModal from "./CvModals/DeleteEducationModal";
 import UpdateEducationModal from "./CvModals/UpdateEducationModal";
 
 export default function Education() {
-  const [open, setOpen] = React.useState(false);
   const [cvEducations, setCvEducations] = useState([]);
 
   let cvEducationService = new CvEducationService();
-
-  const deleteCvEducation = (cveducation) => {
-    cvEducationService.delete(cveducation).then((result) => console.log(result));
-    window.location.reload();
-  };
 
   useEffect(() => {
     cvEducationService
@@ -23,48 +18,44 @@ export default function Education() {
 
   return (
     <div>
-      <Card fluid style={{ marginLeft: "3em",marginTop:"3em" }}>
+      <Card inverted color="red" fluid style={{ marginLeft: "3em", marginTop: "3em" }}>
         <Card.Content>
-          
-        <Grid divided='vertically'>
-    <Grid.Row columns={3}>
-      <Grid.Column>
-      <AddEducationModal
-          triggerButton={
-            <Button floated="left" primary inverted >
-            <Icon name="plus" />
-            Yeni eğitim ekle
-          </Button>
-          }
-          />
-      </Grid.Column>
-      <Grid.Column>
-      <Card.Header style={{marginTop:"1em",fontSize:"20px",fontWeight:"bold"}}>
-            {" "}
-            Eğitim Bilgileri
-          </Card.Header>
-      </Grid.Column>
-    </Grid.Row>
-    </Grid>
-        
-         
-          
-          
-          
+          <Grid divided="vertically">
+            <Grid.Row columns={3}>
+              <Grid.Column>
+                <AddEducationModal
+                  triggerButton={
+                    <Button floated="left" primary inverted>
+                      <Icon name="plus" />
+                      Yeni eğitim ekle
+                    </Button>
+                  }
+                />
+              </Grid.Column>
+              <Grid.Column>
+                <Card.Header
+                  style={{
+                    marginTop: "1em",
+                    fontSize: "20px",
+                    fontWeight: "bold",
+                  }}
+                >
+                  {" "}
+                  Eğitim Bilgileri
+                </Card.Header>
+              </Grid.Column>
+            </Grid.Row>
+          </Grid>
 
           {cvEducations.map((cvEducation, index) => (
-            <Card fluid key={index} >
+            <Card fluid key={index}>
               <Card.Content>
-
-              <UpdateEducationModal
-                triggerButton={
-                  <Button 
-              floated="right" 
-              color="green" 
-              icon="pencil"/>
-                }
-                cvEducation ={cvEducation}
-              />
+                <UpdateEducationModal
+                  triggerButton={
+                    <Button inverted floated="right" color="green" icon="pencil" />
+                  }
+                  cvEducation={cvEducation}
+                />
 
                 <Grid columns="two">
                   <Grid.Row>
@@ -81,7 +72,6 @@ export default function Education() {
                       <Card.Header>{cvEducation.departmentName}</Card.Header>
                     </Grid.Column>
                   </Grid.Row>
-
                   <Grid.Row>
                     <Grid.Column>
                       <Card.Meta style={{ marginBottom: "3px" }}>
@@ -106,29 +96,12 @@ export default function Education() {
                   </Grid.Row>
                 </Grid>
 
-                <Modal
-                  onClose={() => setOpen(false)}
-                  onOpen={() => setOpen(true)}
-                  open={open}
-                  size="small"
-                  trigger={<Button floated="right" color="red" icon="trash" />}
-                >
-                  <Modal.Content>
-                    <p>Silmek istediğinize emin misiniz?</p>
-                  </Modal.Content>
-                  <Modal.Actions>
-                    <Button color="red" inverted onClick={() => setOpen(false)}>
-                      <Icon name="remove" /> No
-                    </Button>
-                    <Button
-                      color="green"
-                      inverted
-                      onClick={() => deleteCvEducation(cvEducation)}
-                    >
-                      <Icon name="checkmark" /> Yes
-                    </Button>
-                  </Modal.Actions>
-                </Modal>
+                <DeleteEducationModal
+                  triggerButton={
+                    <Button inverted floated="right" color="red" icon="trash" />
+                  }
+                  cvEducation={cvEducation}
+                />
               </Card.Content>
             </Card>
           ))}

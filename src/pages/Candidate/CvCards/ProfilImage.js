@@ -15,30 +15,27 @@ export default function ProfilImage({ candidate }) {
 
   return (
     <div>
-      <Grid style={{marginLeft:"3em"}}>
+      <Card fluid style={{marginLeft:"3em"}} inverted color="blue">
+        <Card.Content>
+          <Card.Header style={{marginBottom:"1em"}}>Profil Bilgileri</Card.Header>
+      <Grid >
         <Grid.Row>
           <Grid.Column width={5}>
-              <Image  src={cvImage.url} />
+              <Image style={{padding:"25px"}}src={cvImage.url} />
             
           </Grid.Column>
 
           <Grid.Column width={11}>
-            <Card fluid>
+            <Card fluid inverted color="blue">
               <Card.Content>
                 <Table
-                 textAlign="center"
+                 
                   basic="very"
                   size="large"
                   celled
                   collapsing
-                  style={{  marinLeft: "3em" }}
+                  style={{  marinLeft: "3em",height:"20em"}}
                 >
-                  <Table.Header>
-                    <Table.Row>
-                      <Table.Header collapsing>Profil Bilgileri</Table.Header>
-                    </Table.Row>
-                  </Table.Header>
-
                   <Table.Body>
                     <Table.Row>
                       <Table.Cell>
@@ -48,7 +45,7 @@ export default function ProfilImage({ candidate }) {
                           </Header.Content>
                         </Header>
                       </Table.Cell>
-                      <Table.Cell>{candidate?.firstName}</Table.Cell>
+                      <Table.Cell>{candidate.firstName}</Table.Cell>
                     </Table.Row>
                     <Table.Row>
                       <Table.Cell>
@@ -87,6 +84,8 @@ export default function ProfilImage({ candidate }) {
           </Grid.Column>
         </Grid.Row>
       </Grid>
+      </Card.Content>
+      </Card>
     </div>
   );
 }

@@ -6,6 +6,7 @@ import {
   Icon,
   Image,
   Label,
+  Statistic
 } from "semantic-ui-react";
 
 export default function HomePage() {
@@ -14,7 +15,7 @@ export default function HomePage() {
     <div>
       <Segment
         placeholder
-        style={{ marginTop:"40px" ,height: "35em" }}
+        style={{ marginTop:"35px" ,height: "35em" }}
         inverted
         color="grey"
       >
@@ -128,6 +129,22 @@ export default function HomePage() {
             </Grid.Column>
           </Grid.Row>
         </Grid>
+    
+        <Statistic.Group textAlign='center' style={{marginLeft:"26em",marginTop:"3em"}}>
+      <Statistic>
+        <Statistic.Value>22</Statistic.Value>
+        <Statistic.Label>Şirket</Statistic.Label>
+      </Statistic>
+      <Statistic>
+        <Statistic.Value>31,200</Statistic.Value>
+        <Statistic.Label>İş İlanı</Statistic.Label>
+      </Statistic>
+      <Statistic>
+        <Statistic.Value>22</Statistic.Value>
+        <Statistic.Label>İş Arayan</Statistic.Label>
+      </Statistic>
+    </Statistic.Group>
+
       </Container>
     </div>
   );
